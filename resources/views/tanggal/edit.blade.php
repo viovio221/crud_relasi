@@ -8,14 +8,18 @@
 </head>
 <body>
     <div class="card" style="margin:20px">
-    <div class="card-header">absen Page</div>
+    <div class="card-header">Edit Page</div>
     <div class="card-body">
-        <h5 class="card-title">Nama : {{ $absen->nama }}</h5>
-        <h5 class="card-title">Kelas : {{ $absen->kelas }}</h5>
-        <h5 class="card-title"> masuk : {{ $absen->tanggal }}</h5>
-        <h5 class="card-title">Jam Masuk : {{ $absen->masuk }}</h5>
-        <h5 class="card-title">Jam Keluar : {{ $absen->keluar }}</h5>
-    </div>
+Absen
+    <form action="{{ route('tanggal.update' , $tanggal->id) }}" method="post">
+    {!! csrf_field() !!}
+    @method("PATCH")
+    <input type="hidden" name="id" id="id" value="{{ $tanggal->id }}" id="id">
+    <label>Tanggal Masuk</label><br>
+    <input type="date" name="tanggal" id="tanggal" value="{{ $tanggal->tanggal }}" class="form-control"><br>
+    <input type="submit" value="Update" class="btn btn-success">   
+</form> 
+</div>
 </div>
 </body>
 </html>

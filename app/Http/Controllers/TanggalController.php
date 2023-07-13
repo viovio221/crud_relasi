@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Absen;//add Absen Model - Data is coming from the database via Model.
-use App\models\Tanggal;
+use App\Models\Tanggal;//add Absen Model - Data is coming from the database via Model.
 
-class AbsenController extends Controller
+class TanggalController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $absen = Absen::all();
-        return view ('absen.index')->with('absen',$absen);
+        $tanggal = Tanggal::all();
+        return view ('tanggal.index')->with('tanggal',$tanggal);
     }
 
     /**
@@ -22,8 +21,7 @@ class AbsenController extends Controller
      */
     public function create()
     {
-        $tanggal = Tanggal::all();
-        return view('absen.create', compact('tanggal'));
+        return view('tanggal.create');
     }
 
     /**
@@ -35,9 +33,9 @@ class AbsenController extends Controller
     public function store(Request $request)
     {
         $input =$request->all();
-        Absen::create($input);
+        Tanggal::create($input);
 
-        return redirect('absen')->with('flash_message', 'Absen Addedd');
+        return redirect('tanggal')->with('flash_message', 'Tanggal Addedd');
     }
 
     /**
@@ -45,8 +43,8 @@ class AbsenController extends Controller
      */
     public function show(string $id)
     {
-        $absen = Absen::find($id);
-        return view('absen.show')->with('absen', $absen);
+        $tanggal = Tanggal::find($id);
+        return view('tanggal.show')->with('tanggal', $tanggal);
     }
 
     /**
@@ -57,10 +55,9 @@ class AbsenController extends Controller
      */
     public function edit(string $id)
     {
-        $absen = Absen::find($id);
-        $tanggal = Tanggal::all();
-        return view('absen.edit', compact('tanggal' , 'absen'));
+        $tanggal = Tanggal::find($id);
 
+        return view('tanggal.edit')->with('tanggal', $tanggal);
     }
 
     /**
@@ -72,10 +69,10 @@ class AbsenController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $absen = Absen::find($id);
+        $tanggal = Tanggal::find($id);
         $input =$request->all();
-        $absen->update($input);
-        return redirect('absen')->with('flash_message', 'absen Updated!');
+        $tanggal->update($input);
+        return redirect('tanggal')->with('flash_message', 'tanggal Updated!');
     }
 
     /**
@@ -86,7 +83,7 @@ class AbsenController extends Controller
      */
     public function destroy(string $id)
     {
-        Absen::destroy($id);
-        return redirect('absen')->with('flash_message', 'absen deleted!');
+        Tanggal::destroy($id);
+        return redirect('tanggal')->with('flash_message', 'tanggal deleted!');
     }
 }

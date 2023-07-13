@@ -1,6 +1,8 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbsenController;
+use App\Http\Controllers\TanggalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource("/absen", AbsenController::class); 
+Route::resource("/absen", AbsenController::class);
+Route::resource("/tanggal", TanggalController::class);  

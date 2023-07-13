@@ -10,5 +10,11 @@ class Absen extends Model
     use HasFactory;
     protected $table ='absen';
     protected $primaryKey ='id';
-    protected $fillable = ['nama','kelas','masuk','keluar'];
+    protected $fillable = ['nama','kelas','tanggal','masuk','keluar'];
+
+    public function tanGGal()
+    {
+        return $this->belongsTo(Tanggal::class, 'tanggal', 'id');
+    }
+    
 }

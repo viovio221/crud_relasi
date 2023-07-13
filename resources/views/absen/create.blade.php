@@ -18,6 +18,16 @@
         <label>Kelas</label>
         <input type="text" name="kelas" id="kelas" class="form-control"><br>
 
+        <label>Tanggal Masuk</label><br>
+        <div class="form-group">
+            <select name="tanggal" id="tanggal" class="form-control">
+               @foreach ($tanggal as $item)
+               <option value="{{ $item->id}}"> {{ $item->tanggal}}</option>
+               @endforeach 
+            </select>
+
+        </div>
+
         <label>Masuk</label>
         <input type="time" name="masuk" id="masuk" class="form-control"><br>
 

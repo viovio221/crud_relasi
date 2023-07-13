@@ -8,13 +8,9 @@
 </head>
 <body>
     <div class="card" style="margin:20px">
-    <div class="card-header">absen Page</div>
+    <div class="card-header">Tanggal</div>
     <div class="card-body">
-        <h5 class="card-title">Nama : {{ $absen->nama }}</h5>
-        <h5 class="card-title">Kelas : {{ $absen->kelas }}</h5>
-        <h5 class="card-title"> masuk : {{ $absen->tanggal }}</h5>
-        <h5 class="card-title">Jam Masuk : {{ $absen->masuk }}</h5>
-        <h5 class="card-title">Jam Keluar : {{ $absen->keluar }}</h5>
+        <h5 class="card-title">Tanggal masuk : {{ $tanggal->tanggal }}</h5>
     </div>
 </div>
 </body>

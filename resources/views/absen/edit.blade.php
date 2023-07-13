@@ -21,6 +21,22 @@ Absen
     <label>Kelas</label><br>
     <input type="text" name="kelas" id="kelas" value="{{ $absen->kelas }}" class="form-control"><br>
 
+    <div class="form-group">
+        <label>Tanggal Masuk</label><br>
+                                <select class="form-control" name="tanggal" id="tanggal">
+                                    @foreach ($tanggal as $item)
+                                    @if($item->id== $absen->tanggal || $item->id == old('tanggal'))
+                                  <option selected value="{{ $item->id}}" >{{ $item->tanggal}}
+                                 </option>
+                                 @else 
+                                 <option value="{{ $item->id }}" >{{ $item->tanggal }}
+                                </option>
+                                           @endif
+                                     @endforeach
+          </select>
+                              
+    </div>
+
     <label>Jam Masuk</label><br>
     <input type="time" name="masuk" id="masuk" value="{{ $absen->masuk }}" class="form-control"><br>
 
