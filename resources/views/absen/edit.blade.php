@@ -38,10 +38,10 @@ Absen
     </div>
 
     <label>Jam Masuk</label><br>
-    <input type="time" name="masuk" id="masuk" value="{{ $absen->masuk }}" class="form-control"><br>
+    <input type="text" name="masuk" id="masuk" value="{{ $absen->masuk }}" class="form-control"><br>
 
     <label>Jam Keluar</label><br>
-    <input type="time" name="keluar" id="keluar" value="{{ $absen->keluar }}" class="form-control"><br>
+    <input type="text" name="keluar" id="keluar" value="{{ $absen->keluar }}" class="form-control"><br>
     <input type="submit" value="Update" class="btn btn-success">   
 </form> 
 </div>

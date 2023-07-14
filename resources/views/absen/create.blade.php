@@ -29,10 +29,10 @@
         </div>
 
         <label>Masuk</label>
-        <input type="time" name="masuk" id="masuk" class="form-control"><br>
+        <input type="text" name="masuk" id="masuk" class="form-control"><br>
 
         <label>Keluar</label>
-        <input type="time" name="keluar" id="keluar" class="form-control"><br>
+        <input type="text" name="keluar" id="keluar" class="form-control"><br>
 
 
         <input type="submit" value="Save" class="btn btn-success"><br>

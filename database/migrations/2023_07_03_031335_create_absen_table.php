@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('kelas');
-            $table->string('tanggal');
-            $table->time('masuk');
-            $table->time('keluar');
+            $table->foreignId('tanggal');
+            $table->string('masuk');
+            $table->string('keluar');
+            $table->foreign('tanggal')->references('id')->on('tanggal');
             $table->timestamps();
     
         });
